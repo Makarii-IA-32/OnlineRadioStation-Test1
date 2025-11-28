@@ -24,8 +24,7 @@ public class SQLiteStatsRepository implements StatsRepository {
 
     @Override
     public Map<String, Double> getHourlyStats(int channelId) throws SQLException {
-        // ЗМІНА: Групуємо по 10 хвилин (беремо 15 символів і додаємо '0')
-        // Наприклад: '2023-11-28T14:2' + '0' -> '2023-11-28T14:20'
+
         String sql = """
             SELECT (substr(recorded_at, 1, 15) || '0') as time_bucket, 
                    AVG(listener_count) as avg_listeners
@@ -36,7 +35,6 @@ public class SQLiteStatsRepository implements StatsRepository {
             LIMIT 30
         """;
 
-        // Використовуємо LinkedHashMap, щоб зберегти хронологічний порядок
         Map<String, Double> result = new LinkedHashMap<>();
 
         try (Connection conn = Database.getConnection();
@@ -46,8 +44,6 @@ public class SQLiteStatsRepository implements StatsRepository {
                 while (rs.next()) {
                     String fullTime = rs.getString("time_bucket");
 
-                    // Вирізаємо тільки час "HH:mm" для краси на графіку
-                    // Формат у базі: YYYY-MM-DDTHH:mm... (T на 10-й позиції, час починається з 11)
                     String shortTime = fullTime;
                     if (fullTime.length() >= 16) {
                         shortTime = fullTime.substring(11, 16); // Витягує "14:20"

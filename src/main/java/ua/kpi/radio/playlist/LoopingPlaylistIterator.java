@@ -48,7 +48,6 @@ public class LoopingPlaylistIterator implements Iterator<Track> {
         return null;
     }
 
-    // Метод для стрибка на конкретний трек
     public void setIndex(int index) {
         if (tracks.isEmpty()) return;
         if (index >= 0 && index < tracks.size()) {
@@ -58,7 +57,6 @@ public class LoopingPlaylistIterator implements Iterator<Track> {
         }
     }
 
-    // Отримати індекс поточного треку
     public int getLastReturnedIndex() {
         if (tracks.isEmpty()) return 0;
         return (currentIndex - 1 + tracks.size()) % tracks.size();

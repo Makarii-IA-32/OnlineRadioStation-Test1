@@ -49,12 +49,12 @@ public class FfmpegAdapter implements StreamEncoder {
                 );
             }
 
-            pb.inheritIO(); // Щоб бачити помилки FFmpeg в консолі Java
+            pb.inheritIO();
             ffmpegProcess = pb.start();
-            ffmpegProcess.waitFor(); // Чекаємо завершення треку
+            ffmpegProcess.waitFor();
 
         } catch (InterruptedException e) {
-            // Потік зупинено примусово
+
             stop();
         } catch (Exception e) {
             e.printStackTrace();

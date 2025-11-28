@@ -30,7 +30,7 @@ public class ChannelBroadcaster implements Runnable {
     public ChannelBroadcaster(RadioChannel channelConfig,
                               LoopingPlaylistIterator iterator,
                               long startOffsetMs,
-                              StreamEncoder encoder) { // <--- Injection
+                              StreamEncoder encoder) {
         this.channelConfig = channelConfig;
         this.trackIterator = iterator;
         this.initialSeekMs = startOffsetMs;
@@ -71,7 +71,6 @@ public class ChannelBroadcaster implements Runnable {
             System.out.println("[" + channelConfig.getName() + "] Playing: " + track.getTitle()
                     + (seekToUse > 0 ? " (Resuming from " + (seekToUse/1000) + "s)" : ""));
 
-            // ВИКЛИК АДАПТЕРА ЗАМІСТЬ ПРЯМОГО КОДУ FFmpeg
             encoder.stream(track, outputDir, seekToUse, channelConfig.getBitrate());
         }
     }
@@ -86,7 +85,6 @@ public class ChannelBroadcaster implements Runnable {
         int currentIndex = trackIterator.getLastReturnedIndex();
         trackIterator.setIndex(currentIndex);
 
-        // Зупиняємо через адаптер
         if (encoder.isAlive()) {
             encoder.stop();
         }
@@ -123,7 +121,6 @@ public class ChannelBroadcaster implements Runnable {
         }
     }
 
-    // Приватний метод prepareDirectory залишається без змін...
     private void prepareDirectory(Path dir) {
         try {
             if (!Files.exists(dir)) Files.createDirectories(dir);

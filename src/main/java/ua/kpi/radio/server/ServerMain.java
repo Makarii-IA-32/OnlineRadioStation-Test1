@@ -25,8 +25,6 @@ public class ServerMain {
 
             System.out.println("Starting HTTP server...");
             new HttpServerLauncher().start(8080);
-
-            // --- ЗАПУСК ЗБОРУ СТАТИСТИКИ ---
             startStatisticsCollector();
 
             System.out.println("Server started. Press Ctrl+C to stop.");
@@ -45,17 +43,15 @@ public class ServerMain {
             @Override
             public void run() {
                 try {
-                    // Проходимо по всіх каналах
                     for (RadioChannel ch : channelRepo.findAll()) {
                         int count = service.getActiveListenersCount(ch.getId());
-                        // Записуємо в БД, навіть якщо 0 (щоб бачити історію)
+
                         statsRepo.saveStat(ch.getId(), count);
                     }
-                    // System.out.println("Statistics saved.");
                 } catch (Exception e) {
                     System.err.println("Failed to save stats: " + e.getMessage());
                 }
             }
-        }, 60000, 60000); // Затримка 1 хв, повтор кожну 1 хв
+        }, 60000, 60000);
     }
 }

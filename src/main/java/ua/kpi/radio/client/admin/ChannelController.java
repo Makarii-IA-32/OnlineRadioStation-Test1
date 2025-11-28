@@ -30,10 +30,8 @@ public class ChannelController {
     @FXML private Label lblPlaylistName;
     @FXML private Label lblTrackCount;
 
-    // Список типізований DTO, щоб мати доступ до ID
     @FXML private ListView<RadioAdminFacade.TrackDto> listTracks;
 
-    // Новий елемент для бітрейту
     @FXML private ComboBox<Integer> comboBitrate;
 
     @FXML private Button btnChangePlaylist;

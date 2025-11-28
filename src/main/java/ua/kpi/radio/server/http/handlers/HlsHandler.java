@@ -24,8 +24,8 @@ public class HlsHandler implements HttpHandler {
             return;
         }
 
-        String requestPath = exchange.getRequestURI().getPath(); // /hls/main/stream.m3u8
-        String relative = requestPath.substring("/hls/".length()); // main/stream.m3u8
+        String requestPath = exchange.getRequestURI().getPath();
+        String relative = requestPath.substring("/hls/".length());
 
         Path file = rootDir.resolve(relative).normalize();
         if (!file.startsWith(rootDir) || !Files.exists(file)) {

@@ -7,9 +7,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * Точка входу для JavaFX-адмінки.
- */
 public class AdminApp extends Application {
 
     @Override

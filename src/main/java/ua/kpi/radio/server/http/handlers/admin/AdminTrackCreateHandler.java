@@ -42,7 +42,6 @@ public class AdminTrackCreateHandler implements HttpHandler {
                 exchange.getResponseBody().close();
                 return;
             }
-            // -------------------------------
 
             trackRepo.create(track);
             exchange.sendResponseHeaders(200, 0);

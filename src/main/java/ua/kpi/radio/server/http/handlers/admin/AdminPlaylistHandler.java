@@ -47,8 +47,6 @@ public class AdminPlaylistHandler implements HttpHandler {
             dto.name = playlist.getName();
             dto.tracksCount = playlist.getTracks().size();
             dto.tracks = new ArrayList<>();
-
-            // ЗМІНА: Заповнюємо список об'єктами
             for (Track t : playlist.getTracks()) {
                 dto.tracks.add(new TrackDto(t.getId(), t.getTitle(), t.getArtist()));
             }
@@ -79,7 +77,7 @@ public class AdminPlaylistHandler implements HttpHandler {
         int id;
         String name;
         int tracksCount;
-        List<TrackDto> tracks; // Було List<String>, стало List<TrackDto>
+        List<TrackDto> tracks;
     }
 
     static class TrackDto {

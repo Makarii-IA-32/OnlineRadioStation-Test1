@@ -13,11 +13,11 @@ public class AdminBroadcastStartHandler implements HttpHandler {
         String idStr = getQueryParam(exchange.getRequestURI(), "id");
         try {
             if (idStr != null) {
-                // Запуск конкретного каналу
+
                 int id = Integer.parseInt(idStr);
                 RadioChannelManager.getInstance().startChannel(id);
             } else {
-                // Запуск всіх (якщо id не передано)
+
                 RadioChannelManager.getInstance().startAllChannels();
             }
             exchange.sendResponseHeaders(200, 0);

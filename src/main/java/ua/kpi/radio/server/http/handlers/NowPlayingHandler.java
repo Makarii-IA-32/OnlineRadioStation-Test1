@@ -38,8 +38,6 @@ public class NowPlayingHandler implements HttpHandler {
             }
         }
 
-        // ЗМІНА: Реєструємо активність ТІЛЬКИ якщо є userId.
-        // Адмінка не шле userId, тому вона не буде рахуватися.
         if (userId != null && !userId.isBlank()) {
             radioService.registerHeartbeat(channelId, userId);
         }

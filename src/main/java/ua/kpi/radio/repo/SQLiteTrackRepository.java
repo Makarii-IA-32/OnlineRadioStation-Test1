@@ -112,7 +112,6 @@ public class SQLiteTrackRepository implements TrackRepository {
     }
     @Override
     public void update(Track track) throws SQLException {
-        // Додаємо cover_path в запит
         String sql = "UPDATE tracks SET title = ?, artist = ?, album = ?, cover_path = ? WHERE id = ?";
         try (Connection conn = Database.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {

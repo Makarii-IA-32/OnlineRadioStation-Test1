@@ -41,8 +41,7 @@ public class SQLitePlaylistRepository implements PlaylistRepository {
 
     @Override
     public Playlist findById(int id) throws SQLException {
-        // Метод можна реалізувати за аналогією, якщо знадобиться для RadioChannelManager
-        // Поки що loadDefaultPlaylist вистачало, але для мульти-каналів знадобиться пошук по ID
+
         try (Connection conn = Database.getConnection()) {
             String sql = "SELECT id, name FROM playlists WHERE id = ?";
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -107,7 +106,6 @@ public class SQLitePlaylistRepository implements PlaylistRepository {
 
     @Override
     public void delete(int id) throws SQLException {
-        // Каскадне видалення треків налаштоване в схемі, тому видаляємо тільки плейлист
         String sql = "DELETE FROM playlists WHERE id = ?";
         try (Connection conn = Database.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -118,7 +116,7 @@ public class SQLitePlaylistRepository implements PlaylistRepository {
 
     @Override
     public void addTrack(int playlistId, int trackId) throws SQLException {
-        // 1. Знаходимо останній order_index
+
         int nextIndex = 0;
         String indexSql = "SELECT MAX(order_index) FROM playlist_tracks WHERE playlist_id = ?";
         try (Connection conn = Database.getConnection();

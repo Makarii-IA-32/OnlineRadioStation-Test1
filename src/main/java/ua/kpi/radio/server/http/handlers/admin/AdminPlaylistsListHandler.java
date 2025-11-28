@@ -22,7 +22,7 @@ public class AdminPlaylistsListHandler implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
         try {
             List<Playlist> all = repo.findAll();
-            // Перетворюємо в спрощений DTO, якщо треба, або просто віддаємо як є
+
             List<SimplePlaylistDto> dtos = new ArrayList<>();
             for (Playlist p : all) {
                 dtos.add(new SimplePlaylistDto(p.getId(), p.getName()));

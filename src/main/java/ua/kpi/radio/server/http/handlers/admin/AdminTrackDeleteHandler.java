@@ -28,7 +28,6 @@ public class AdminTrackDeleteHandler implements HttpHandler {
             Track track = trackRepo.findById(id);
 
             if (track != null) {
-                // 1. Спробуємо видалити фізичний файл
                 try {
                     Path path = Path.of(track.getAudioPath());
                     Files.deleteIfExists(path);
@@ -37,7 +36,6 @@ public class AdminTrackDeleteHandler implements HttpHandler {
                     System.err.println("Could not delete file: " + e.getMessage());
                 }
 
-                // 2. Видаляємо з БД
                 trackRepo.delete(id);
             }
 

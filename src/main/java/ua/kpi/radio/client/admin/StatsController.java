@@ -22,7 +22,6 @@ public class StatsController {
 
     @FXML
     public void initialize() {
-        // Налаштування ComboBox для правильного відображення назв каналів
         comboChannels.setConverter(new javafx.util.StringConverter<>() {
             @Override
             public String toString(RadioChannel object) {
@@ -66,8 +65,6 @@ public class StatsController {
             try {
                 Map<String, Double> data = facade.getChannelStats(selected.getId());
 
-                // Сортуємо дані за часом (бо LinkedHashMap може збитися при передачі JSON)
-                // TreeMap автоматично сортує ключі (String time)
                 Map<String, Double> sortedData = new TreeMap<>(data);
 
                 Platform.runLater(() -> updateChart(selected.getName(), sortedData));

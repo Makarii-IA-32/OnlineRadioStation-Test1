@@ -206,7 +206,7 @@ public class PlaylistsManagerController {
         });
     }
 
-    // Допоміжний клас для галочок
+
     private static class TrackCheckModel {
         private final Track track;
         private final BooleanProperty selected = new SimpleBooleanProperty(false);
@@ -221,11 +221,11 @@ public class PlaylistsManagerController {
 
         @Override
         public String toString() {
-            // Те, що буде написано біля галочки
+
             return track.getTitle() + " — " + track.getArtist();
         }
     }
-    // --------------------------------
+
 
     @FXML
     public void onRemoveTrack() {

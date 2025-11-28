@@ -97,10 +97,8 @@ public class RadioChannelManager {
 
             LoopingPlaylistIterator iterator = new LoopingPlaylistIterator(pl.getTracks(), startIndex);
 
-            // СТВОРЮЄМО АДАПТЕР ТУТ
             FfmpegAdapter encoder = new FfmpegAdapter();
 
-            // Передаємо його в конструктор
             ChannelBroadcaster broadcaster = new ChannelBroadcaster(ch, iterator, startOffsetMs, encoder);
 
             Thread t = new Thread(broadcaster, "Broadcast-" + ch.getName());

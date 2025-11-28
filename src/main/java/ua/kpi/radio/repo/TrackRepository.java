@@ -9,9 +9,7 @@ public interface TrackRepository {
     Track findById(int id) throws SQLException;
     boolean hasAny() throws SQLException;
 
-    // Новий метод
     void create(Track track) throws SQLException;
-    // Додайте цей метод в інтерфейс
     List<Track> findAll() throws SQLException;
     boolean exists(String title, String audioPath) throws SQLException;
     void delete(int id) throws SQLException;

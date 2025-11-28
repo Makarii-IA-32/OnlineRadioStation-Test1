@@ -2,7 +2,7 @@ package ua.kpi.radio.domain;
 
 public class RadioChannel {
     private int id;
-    private String name;       // Назва каналу (використовується для URL: /hls/name/...)
+    private String name;
     private int playlistId;
     private int bitrate;
 

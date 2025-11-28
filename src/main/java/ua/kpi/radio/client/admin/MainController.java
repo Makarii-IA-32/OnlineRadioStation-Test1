@@ -28,16 +28,14 @@ public class MainController {
     public void refreshChannels() {
         new Thread(() -> {
             try {
-                // Отримуємо список з сервера
+
                 List<RadioChannel> channels = facade.getAllChannels();
 
-                // ЛОГ ДЛЯ ВІДЛАДКИ:
                 System.out.println("Отримано каналів з сервера: " + channels.size());
                 for (RadioChannel c : channels) {
                     System.out.println(" - Канал ID=" + c.getId() + ", Name=" + c.getName());
                 }
 
-                // Передаємо оновлення в UI потік
                 Platform.runLater(() -> synchronizeTabs(channels));
             } catch (Exception e) {
                 e.printStackTrace();

@@ -20,8 +20,6 @@ public class AdminReloadPlaylistHandler implements HttpHandler {
             return;
         }
 
-        // Перезавантажуємо канали:
-        // Це змусить їх перечитати плейлисти з бази даних
         channelManager.stopAllChannels();
         channelManager.startAllChannels();
 

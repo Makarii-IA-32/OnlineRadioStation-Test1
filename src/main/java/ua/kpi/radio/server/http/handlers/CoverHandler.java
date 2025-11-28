@@ -47,7 +47,6 @@ public class CoverHandler implements HttpHandler {
             }
         }
 
-        // Якщо файл не знайдено або trackId кривий — віддаємо default.jpg
         if (fileToSend == null) {
             if (Files.exists(DEFAULT_COVER)) {
                 fileToSend = DEFAULT_COVER;

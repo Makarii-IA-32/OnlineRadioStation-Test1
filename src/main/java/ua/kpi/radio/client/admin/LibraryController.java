@@ -52,7 +52,6 @@ public class LibraryController {
             return;
         }
 
-        // Відкриваємо діалог редагування
         showEditDialog(selected);
     }
 

@@ -9,7 +9,6 @@ public class RadioService {
     private static final RadioService INSTANCE = new RadioService();
     private final Map<Integer, Track> channelTracks = new ConcurrentHashMap<>();
 
-    // Мапа для підрахунку: ChannelID -> (UserID -> Останній час активності)
     private final Map<Integer, Map<String, Long>> listenersHeartbeats = new ConcurrentHashMap<>();
 
     private RadioService() {}
@@ -37,7 +36,7 @@ public class RadioService {
         if (channelListeners == null) return 0;
 
         long now = System.currentTimeMillis();
-        long threshold = 5 * 1000; // Вважаємо активними тих, хто був тут останні 15 сек
+        long threshold = 5 * 1000;
 
         Iterator<Map.Entry<String, Long>> it = channelListeners.entrySet().iterator();
         while (it.hasNext()) {
@@ -72,7 +71,6 @@ public class RadioService {
         private String artist;
         private int listeners;
         private String coverUrl;
-        // Getters/Setters...
         public String getTitle() { return title; }
         public void setTitle(String title) { this.title = title; }
         public String getArtist() { return artist; }

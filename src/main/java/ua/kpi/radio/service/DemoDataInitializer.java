@@ -62,7 +62,6 @@ public class DemoDataInitializer {
     }
 
     private int insertDemoTrack(Connection conn) throws SQLException {
-        // Оновлені шляхи до папок music-library та cover-library
         String sql = """
                 INSERT INTO tracks (title, artist, album, audio_path, cover_path)
                 VALUES (?, ?, ?, ?, ?)
@@ -84,7 +83,6 @@ public class DemoDataInitializer {
     }
 
     private int insertDemoPlaylist(Connection conn) throws SQLException {
-        // ВИПРАВЛЕНО: прибрано поле description
         String sql = "INSERT INTO playlists (name) VALUES (?)";
         try (PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, "Demo Playlist");
@@ -97,7 +95,6 @@ public class DemoDataInitializer {
     }
 
     private void insertDemoChannel(Connection conn, int playlistId) throws SQLException {
-        // Перевіряємо чи є хоч якісь канали
         try (PreparedStatement check = conn.prepareStatement("SELECT COUNT(*) FROM radio_channels");
              ResultSet rs = check.executeQuery()) {
             if (rs.next() && rs.getInt(1) > 0) {

@@ -17,7 +17,7 @@ public class AdminBroadcastStopHandler implements HttpHandler {
                 int id = Integer.parseInt(idStr);
                 RadioChannelManager.getInstance().stopChannel(id);
             } else {
-                // Якщо ID не передано — зупиняємо все
+
                 RadioChannelManager.getInstance().stopAllChannels();
             }
             exchange.sendResponseHeaders(200, 0);
