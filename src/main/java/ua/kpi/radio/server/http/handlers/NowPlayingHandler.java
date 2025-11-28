@@ -7,7 +7,6 @@ import ua.kpi.radio.service.RadioService;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.URI;
 import java.nio.charset.StandardCharsets;
 
 public class NowPlayingHandler implements HttpHandler {
@@ -22,20 +21,27 @@ public class NowPlayingHandler implements HttpHandler {
             return;
         }
 
-        // Читаємо channelId з URL
-        int channelId = 1; // Дефолтний канал, якщо не вказано (для index.html)
+        int channelId = 1;
+        String userId = null; // ЗМІНА: за замовчуванням null
+
         String query = exchange.getRequestURI().getQuery();
         if (query != null) {
             for (String p : query.split("&")) {
                 String[] kv = p.split("=");
-                if (kv.length == 2 && kv[0].equals("channelId")) {
-                    try {
-                        channelId = Integer.parseInt(kv[1]);
-                    } catch (NumberFormatException e) {
-                        // ignore
+                if (kv.length == 2) {
+                    if (kv[0].equals("channelId")) {
+                        try { channelId = Integer.parseInt(kv[1]); } catch (NumberFormatException ignored) {}
+                    } else if (kv[0].equals("userId")) {
+                        userId = kv[1];
                     }
                 }
             }
+        }
+
+        // ЗМІНА: Реєструємо активність ТІЛЬКИ якщо є userId.
+        // Адмінка не шле userId, тому вона не буде рахуватися.
+        if (userId != null && !userId.isBlank()) {
+            radioService.registerHeartbeat(channelId, userId);
         }
 
         var info = radioService.getNowPlayingInfo(channelId);

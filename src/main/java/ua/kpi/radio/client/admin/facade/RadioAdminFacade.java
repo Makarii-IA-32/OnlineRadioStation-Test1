@@ -118,6 +118,13 @@ public class RadioAdminFacade {
         }
     }
 
+    // Повертає мапу: Час -> Кількість
+    public java.util.Map<String, Double> getChannelStats(int channelId) throws IOException, InterruptedException {
+        String json = sendGet("/admin/stats?id=" + channelId);
+        // Використовуємо TypeToken для Map
+        return gson.fromJson(json, new TypeToken<java.util.Map<String, Double>>(){}.getType());
+    }
+
     // DTOs
     public static class NowPlayingDto {
         private String title, artist, coverUrl;

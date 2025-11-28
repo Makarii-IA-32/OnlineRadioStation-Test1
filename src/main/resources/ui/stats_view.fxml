@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ua.kpi.radio.client.admin.StatsController"
+      spacing="10" style="-fx-padding: 20;">
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Статистика каналу:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <ComboBox fx:id="comboChannels" onAction="#onChannelSelected" prefWidth="200"/>
+        <Button text="🔄 Оновити" onAction="#refreshStats"/>
+    </HBox>
+
+    <LineChart fx:id="lineChart" title="Активність слухачів (за останні 24 год)" VBox.vgrow="ALWAYS">
+        <xAxis>
+            <CategoryAxis label="Час" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Слухачі (сер.)" side="LEFT" />
+        </yAxis>
+    </LineChart>
+
+</VBox>

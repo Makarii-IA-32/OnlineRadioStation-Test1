@@ -23,6 +23,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            /* Легкий статичний градієнт */
             background: linear-gradient(135deg, #ff512f, #dd2476);
             color: var(--text-color);
             overflow: hidden;
@@ -314,6 +315,17 @@
     let channels = [];
     let currentIndex = 0;
 
+    // --- ГЕНЕРАЦІЯ USER ID (Для статистики) ---
+    // Якщо ID немає в локальному сховищі, створюємо новий
+    let userId = localStorage.getItem('radio_user_id');
+    if (!userId) {
+        userId = 'user_' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('radio_user_id', userId);
+        console.log("Generated new UserID:", userId);
+    } else {
+        console.log("Loaded UserID:", userId);
+    }
+
     async function init() {
         try {
             const res = await fetch('/api/channels');
@@ -427,7 +439,8 @@
         if (channels.length === 0) return;
         const currentCh = channels[currentIndex];
 
-        fetch(`/api/now-playing?channelId=${currentCh.id}`)
+        // --- ТУТ МИ ПЕРЕДАЄМО USER ID ---
+        fetch(`/api/now-playing?channelId=${currentCh.id}&userId=${userId}`)
             .then(res => res.json())
             .then(data => {
                 updateMetadata(data);
@@ -469,7 +482,6 @@
     function startHls(channelName) {
         if (hls) return;
 
-        // Унікальний session ID для уникнення кешування
         const streamUrl = `/hls/${channelName}/stream.m3u8?session=${Date.now()}`;
 
         if (Hls.isSupported()) {
@@ -490,15 +502,12 @@
                 }
             });
 
-            // --- ВАЖЛИВЕ ВИПРАВЛЕННЯ ---
             hls.on(Hls.Events.ERROR, (event, data) => {
                 if (data.fatal) {
                     switch (data.type) {
                         case Hls.ErrorTypes.NETWORK_ERROR:
-                            console.log("Stream not ready yet (404). Retrying in next tick...");
-                            // Замість безкінечних спроб hls.startLoad(), ми знищуємо плеєр.
-                            // Наступна перевірка checkServerStatus створить його з НОВИМ URL (новим session ID).
-                            stopHls();
+                            console.log("Stream not ready yet. Retrying...");
+                            stopHls(); // Повне перезавантаження при помилці мережі (404)
                             break;
                         case Hls.ErrorTypes.MEDIA_ERROR:
                             hls.recoverMediaError();

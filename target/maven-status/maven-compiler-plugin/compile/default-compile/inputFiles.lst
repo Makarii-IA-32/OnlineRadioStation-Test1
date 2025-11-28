@@ -1,54 +1,56 @@
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastStateHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\PlaybackEventRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\Database.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\Playlist.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLiteUserRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLitePlaybackEventRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastStopHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\PlaylistsManagerController.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminReloadPlaylistHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLiteRadioChannelRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminTrackCreateHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\Track.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLiteTrackRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\ChannelController.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\LibraryController.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelDeleteHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\UserRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelCreateHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminTrackUpdateHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminPlaylistTrackHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\HttpServerLauncher.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\playlist\LoopingPlaylistIterator.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\User.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLitePlaylistRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminPlaylistsListHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\service\RadioService.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\PlaybackEvent.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\TrackRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastJumpHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\service\DemoDataInitializer.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\facade\RadioAdminFacade.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\MainController.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\RadioChannelRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminTrackDeleteHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\PlaylistRepository.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\CoverHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastSkipHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\UploadTrackController.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\AdminApp.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminPlaylistActionHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastStartHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelSetPlaylistHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminPlaylistHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\RootHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\ClientEvents.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelBitrateHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\NowPlayingHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\RadioChannel.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\service\broadcasting\ChannelBroadcaster.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\radio\RadioChannelManager.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\HlsHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\ServerMain.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminTrackListHandler.java
-C:\Users\acern\OneDrive\Робочий стіл\КПІ\КПІ 5 семестр\Java\Lab3\Code\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelListHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\LibraryController.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\RadioChannel.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminTrackUpdateHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\CoverHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\service\broadcasting\ChannelBroadcaster.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\Track.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastStateHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelSetPlaylistHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\AdminApp.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLitePlaylistRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\service\RadioService.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\Database.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\StatsController.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminReloadPlaylistHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\TrackRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminTrackListHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\ClientEvents.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelListHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastSkipHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\radio\RadioChannelManager.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminPlaylistHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastStartHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminTrackDeleteHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\MainController.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\ChannelController.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelBitrateHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\playlist\LoopingPlaylistIterator.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\UploadTrackController.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\RadioChannelRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLiteUserRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminTrackCreateHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\Playlist.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLiteTrackRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\ServerMain.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastStopHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\UserRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\NowPlayingHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminPlaylistTrackHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminStatsHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLiteRadioChannelRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminPlaylistsListHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\HlsHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\PlaylistRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\PlaylistsManagerController.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminBroadcastJumpHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\PlaybackEvent.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminPlaylistActionHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\RootHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\client\admin\facade\RadioAdminFacade.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\StatsRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\domain\User.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\service\DemoDataInitializer.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelDeleteHandler.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\repo\SQLiteStatsRepository.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\HttpServerLauncher.java
+C:\Users\acern\OneDrive\Робочий стіл\Курсова ТРПЗ\4. Робоча прога, але без чиски коду\OnlineRadioStation\src\main\java\ua\kpi\radio\server\http\handlers\admin\AdminChannelCreateHandler.java

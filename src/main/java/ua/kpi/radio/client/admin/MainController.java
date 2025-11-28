@@ -195,4 +195,19 @@ public class MainController {
             showError("Не вдалося відкрити бібліотеку: " + e.getMessage());
         }
     }
+    @FXML
+    public void onOpenStats() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/stats_view.fxml"));
+            Parent root = loader.load();
+
+            javafx.stage.Stage stage = new javafx.stage.Stage();
+            stage.setTitle("Статистика прослуховувань");
+            stage.setScene(new javafx.scene.Scene(root, 800, 600));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            showError("Не вдалося відкрити статистику: " + e.getMessage());
+        }
+    }
 }

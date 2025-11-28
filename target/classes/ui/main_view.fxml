@@ -32,6 +32,10 @@
                 <Button text="📂 Плейлисти" onAction="#onOpenPlaylistManager"
                         maxWidth="Infinity"
                         style="-fx-font-weight: bold; -fx-base: #b6d7a8;"/>
+
+                <Button text="📊 Статистика" onAction="#onOpenStats"
+                        maxWidth="Infinity"
+                        style="-fx-font-weight: bold; -fx-base: #ffb347;"/>
             </VBox>
         </HBox>
     </top>

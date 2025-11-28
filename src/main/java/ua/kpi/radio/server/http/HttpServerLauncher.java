@@ -51,6 +51,8 @@ public class HttpServerLauncher {
         server.createContext("/admin/tracks/delete", new AdminTrackDeleteHandler());
         server.createContext("/admin/tracks/update", new AdminTrackUpdateHandler());
 
+        server.createContext("/admin/stats", new AdminStatsHandler());
+
         server.setExecutor(null);
         server.start();
     }

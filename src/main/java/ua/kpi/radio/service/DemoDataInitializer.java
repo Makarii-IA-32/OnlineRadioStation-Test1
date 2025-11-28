@@ -71,7 +71,7 @@ public class DemoDataInitializer {
         try (PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, "Demo Track");
             ps.setString(2, "Demo Artist");
-            ps.setString(3, "Hunting Soul");
+            ps.setString(3, "Demo");
             ps.setString(4, "music-library/demo.mp3");
             ps.setString(5, "cover-library/demo.jpg");
             ps.executeUpdate();

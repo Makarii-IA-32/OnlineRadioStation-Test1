@@ -23,17 +23,13 @@ CREATE TABLE IF NOT EXISTS radio_channels (
                                               bitrate     INTEGER DEFAULT 128
 );
 
--- Події прослуховування
-CREATE TABLE IF NOT EXISTS playback_events (
-                                               id          INTEGER PRIMARY KEY AUTOINCREMENT,
-                                               user_id     INTEGER NOT NULL,
-                                               track_id    INTEGER NOT NULL,
-                                               channel_id  INTEGER,
-                                               start_time  TEXT NOT NULL,
-                                               end_time    TEXT,
-                                               FOREIGN KEY (user_id) REFERENCES users(id),
-                                               FOREIGN KEY (track_id) REFERENCES tracks(id),
-                                               FOREIGN KEY (channel_id) REFERENCES radio_channels(id)
+--
+CREATE TABLE IF NOT EXISTS channel_stats (
+                                             id             INTEGER PRIMARY KEY AUTOINCREMENT,
+                                             channel_id     INTEGER NOT NULL,
+                                             listener_count INTEGER NOT NULL,
+                                             recorded_at    TEXT NOT NULL,  -- Час запису статистики
+                                             FOREIGN KEY (channel_id) REFERENCES radio_channels(id)
 );
 
 -- Плейлисти

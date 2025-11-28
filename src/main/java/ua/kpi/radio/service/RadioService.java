@@ -1,23 +1,20 @@
 package ua.kpi.radio.service;
 
 import ua.kpi.radio.domain.Track;
-import ua.kpi.radio.radio.RadioChannelManager;
-
+import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class RadioService {
-
     private static final RadioService INSTANCE = new RadioService();
-
-    // Зберігаємо трек для кожного каналу окремо: ChannelID -> Track
     private final Map<Integer, Track> channelTracks = new ConcurrentHashMap<>();
+
+    // Мапа для підрахунку: ChannelID -> (UserID -> Останній час активності)
+    private final Map<Integer, Map<String, Long>> listenersHeartbeats = new ConcurrentHashMap<>();
 
     private RadioService() {}
 
-    public static RadioService getInstance() {
-        return INSTANCE;
-    }
+    public static RadioService getInstance() { return INSTANCE; }
 
     public void updateNowPlaying(int channelId, Track track) {
         channelTracks.put(channelId, track);
@@ -25,31 +22,47 @@ public class RadioService {
 
     public void clearNowPlaying(int channelId) {
         channelTracks.remove(channelId);
+        listenersHeartbeats.remove(channelId);
     }
 
-    /**
-     * Отримати інфо для конкретного каналу
-     */
+    // Метод, який викликає NowPlayingHandler
+    public void registerHeartbeat(int channelId, String userId) {
+        listenersHeartbeats.computeIfAbsent(channelId, k -> new ConcurrentHashMap<>())
+                .put(userId, System.currentTimeMillis());
+    }
+
+    // Метод для отримання кількості слухачів (очищає старих)
+    public int getActiveListenersCount(int channelId) {
+        Map<String, Long> channelListeners = listenersHeartbeats.get(channelId);
+        if (channelListeners == null) return 0;
+
+        long now = System.currentTimeMillis();
+        long threshold = 5 * 1000; // Вважаємо активними тих, хто був тут останні 15 сек
+
+        Iterator<Map.Entry<String, Long>> it = channelListeners.entrySet().iterator();
+        while (it.hasNext()) {
+            if (now - it.next().getValue() > threshold) {
+                it.remove();
+            }
+        }
+        return channelListeners.size();
+    }
+
     public NowPlayingInfo getNowPlayingInfo(int channelId) {
         NowPlayingInfo info = new NowPlayingInfo();
-
-        // Перевіряємо, чи є такий канал і чи він активний (за бажанням можна питати Manager)
         Track currentTrack = channelTracks.get(channelId);
 
+        info.setListeners(getActiveListenersCount(channelId)); // <--- Передаємо цифру в UI
+
         if (currentTrack == null) {
-            // Якщо нічого не грає або канал вимкнено
-            info.setTitle("Очікування треку..."); // або "Ефір зупинено"
+            info.setTitle("Очікування треку...");
             info.setArtist("");
-            info.setListeners(0);
             return info;
         }
-
         info.setTrackId(currentTrack.getId());
         info.setTitle(currentTrack.getTitle());
         info.setArtist(currentTrack.getArtist());
-        info.setListeners(0); // Лічильник слухачів поки заглушка
         info.setCoverUrl("/covers?trackId=" + currentTrack.getId());
-
         return info;
     }
 
@@ -59,8 +72,7 @@ public class RadioService {
         private String artist;
         private int listeners;
         private String coverUrl;
-
-        // Getters / Setters
+        // Getters/Setters...
         public String getTitle() { return title; }
         public void setTitle(String title) { this.title = title; }
         public String getArtist() { return artist; }
