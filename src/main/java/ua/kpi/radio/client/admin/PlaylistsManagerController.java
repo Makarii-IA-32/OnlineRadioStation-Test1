@@ -7,8 +7,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxListCell;
 import javafx.scene.layout.VBox;
+import ua.kpi.radio.client.admin.events.EventManager;
 import ua.kpi.radio.client.admin.facade.RadioAdminFacade;
 import ua.kpi.radio.domain.Track;
+
 
 import java.util.List;
 import java.util.Set;
@@ -197,7 +199,7 @@ public class PlaylistsManagerController {
 
                     // Оновлюємо UI
                     loadTracks(selectedPlaylist.getId());
-                    ClientEvents.firePlaylistUpdated(selectedPlaylist.getId());
+                    EventManager.getInstance().notifyObservers(selectedPlaylist.getId());
 
                 } catch (Exception e) { e.printStackTrace(); }
             }).start();
@@ -238,7 +240,7 @@ public class PlaylistsManagerController {
             try {
                 facade.removeTrackFromPlaylist(selectedPlaylist.getId(), selectedTrack.getId());
                 loadTracks(selectedPlaylist.getId());
-                ClientEvents.firePlaylistUpdated(selectedPlaylist.getId());
+                EventManager.getInstance().notifyObservers(selectedPlaylist.getId());
             } catch (Exception e) {
                 e.printStackTrace();
                 Platform.runLater(() -> new Alert(Alert.AlertType.ERROR, "Помилка: " + e.getMessage()).show());

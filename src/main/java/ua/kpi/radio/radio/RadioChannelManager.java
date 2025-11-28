@@ -8,6 +8,7 @@ import ua.kpi.radio.repo.RadioChannelRepository;
 import ua.kpi.radio.repo.SQLitePlaylistRepository;
 import ua.kpi.radio.repo.SQLiteRadioChannelRepository;
 import ua.kpi.radio.service.broadcasting.ChannelBroadcaster;
+import ua.kpi.radio.service.broadcasting.FfmpegAdapter;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -95,7 +96,12 @@ public class RadioChannelManager {
             }
 
             LoopingPlaylistIterator iterator = new LoopingPlaylistIterator(pl.getTracks(), startIndex);
-            ChannelBroadcaster broadcaster = new ChannelBroadcaster(ch, iterator, startOffsetMs);
+
+            // СТВОРЮЄМО АДАПТЕР ТУТ
+            FfmpegAdapter encoder = new FfmpegAdapter();
+
+            // Передаємо його в конструктор
+            ChannelBroadcaster broadcaster = new ChannelBroadcaster(ch, iterator, startOffsetMs, encoder);
 
             Thread t = new Thread(broadcaster, "Broadcast-" + ch.getName());
             t.setDaemon(true);

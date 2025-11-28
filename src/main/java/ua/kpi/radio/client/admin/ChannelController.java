@@ -10,6 +10,8 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import ua.kpi.radio.client.admin.facade.RadioAdminFacade;
 import ua.kpi.radio.domain.RadioChannel;
+import ua.kpi.radio.client.admin.events.EventManager;
+import ua.kpi.radio.client.admin.events.IObserver;
 
 import java.io.ByteArrayInputStream;
 import java.net.URI;
@@ -96,8 +98,10 @@ public class ChannelController {
         });
 
         // --- 4. Підписка на оновлення плейлиста (з інших вікон) ---
-        ClientEvents.onPlaylistUpdated(playlistId -> {
+        EventManager.getInstance().attach(playlistId -> {
+            // Якщо оновився саме той плейлист, який грає на цьому каналі
             if (this.channel != null && this.channel.getPlaylistId() == playlistId) {
+                // Оновлюємо список треків на екрані
                 loadPlaylistInfo();
             }
         });

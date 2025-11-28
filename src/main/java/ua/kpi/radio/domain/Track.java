@@ -19,7 +19,42 @@ public class Track {
         this.audioPath = audioPath;
         this.coverPath = coverPath;
     }
+    public static class Builder {
+        private final Track track;
 
+        public Builder() {
+            track = new Track();
+        }
+
+        public Builder title(String title) {
+            track.setTitle(title);
+            return this;
+        }
+
+        public Builder artist(String artist) {
+            track.setArtist(artist);
+            return this;
+        }
+
+        public Builder album(String album) {
+            track.setAlbum(album);
+            return this;
+        }
+
+        public Builder audioPath(String path) {
+            track.setAudioPath(path);
+            return this;
+        }
+
+        public Builder coverPath(String path) {
+            track.setCoverPath(path);
+            return this;
+        }
+
+        public Track build() {
+            return track;
+        }
+    }
     // Геттери та сеттери
 
     public int getId() {

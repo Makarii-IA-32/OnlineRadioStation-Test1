@@ -97,13 +97,14 @@ public class UploadTrackController {
             Path destFile = destDir.resolve(selectedFile.getName());
             Files.copy(selectedFile.toPath(), destFile, StandardCopyOption.REPLACE_EXISTING);
 
-            // 2. Створюємо об'єкт Track
-            Track t = new Track();
-            t.setTitle(txtTitle.getText());
-            t.setArtist(txtArtist.getText());
-            t.setAlbum(txtAlbum.getText());
-            t.setAudioPath("music-library/" + selectedFile.getName());
-            t.setCoverPath("cover-library/default.jpg");
+            // 2. Створюємо об'єкт Track через BUILDER
+            Track t = new Track.Builder()
+                    .title(txtTitle.getText())
+                    .artist(txtArtist.getText())
+                    .album(txtAlbum.getText())
+                    .audioPath("music-library/" + selectedFile.getName())
+                    .coverPath("cover-library/default.jpg")
+                    .build();
 
             // 3. Відправляємо дані на сервер
             facade.createTrack(t);
