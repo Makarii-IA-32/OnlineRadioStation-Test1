@@ -116,13 +116,9 @@ public class MainController {
             String name = result.get();
             new Thread(() -> {
                 try {
-                    System.out.println("Відправляю запит на створення каналу: " + name);
+                    System.out.println("Відправлення запиту на створення каналу: " + name);
                     facade.createChannel(name);
-
-                    // !!! ВАЖЛИВО: Невелика пауза, щоб БД встигла записати зміни
                     Thread.sleep(500);
-
-                    System.out.println("Запит виконано. Оновлюю список...");
                     refreshChannels();
                 } catch (Exception e) {
                     Platform.runLater(() -> showError("Помилка створення: " + e.getMessage()));

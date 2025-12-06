@@ -7,7 +7,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Віддає index.html з resources/web/index.html
+ * Віддає index.html
  */
 public class RootHandler implements HttpHandler {
 

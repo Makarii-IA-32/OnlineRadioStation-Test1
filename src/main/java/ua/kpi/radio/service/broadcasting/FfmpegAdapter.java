@@ -5,9 +5,6 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * Адаптер для утиліти FFmpeg.
- */
 public class FfmpegAdapter implements StreamEncoder {
 
     private Process ffmpegProcess;

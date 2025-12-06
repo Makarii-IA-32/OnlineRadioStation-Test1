@@ -17,7 +17,6 @@ public class ChannelBroadcaster implements Runnable {
     private final LoopingPlaylistIterator trackIterator;
     private final RadioService radioService = RadioService.getInstance();
 
-    // Використовуємо інтерфейс замість конкретного Process
     private final StreamEncoder encoder;
 
     private volatile boolean running = true;

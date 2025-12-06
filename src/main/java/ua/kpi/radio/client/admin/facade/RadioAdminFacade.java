@@ -51,12 +51,9 @@ public class RadioAdminFacade {
         sendPost("/admin/channels/set-playlist?channelId=" + channelId + "&playlistId=" + playlistId);
     }
 
-    // --- INFO ---
 
     public NowPlayingDto getNowPlaying(int channelId) throws IOException, InterruptedException {
-        // Увага: NowPlayingHandler на сервері має вміти приймати ?channelId=...
-        // Якщо він поки не вміє, повертатиме загальну інфу.
-        // Але для майбутнього краще передавати параметр.
+
         String json = sendGet("/api/now-playing?channelId=" + channelId);
         return gson.fromJson(json, NowPlayingDto.class);
     }
@@ -71,7 +68,6 @@ public class RadioAdminFacade {
         return gson.fromJson(json, new TypeToken<List<PlaylistSimpleDto>>(){}.getType());
     }
 
-    // --- HTTP Helpers ---
 
     private String sendGet(String path) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(BASE_URL + path)).GET().build();
@@ -103,7 +99,7 @@ public class RadioAdminFacade {
             throw new IOException("Server error " + response.statusCode());
         }
     }
-    // Додайте метод для оновлення
+
     public void updateTrack(Track track) throws IOException, InterruptedException {
         String json = gson.toJson(track);
         HttpRequest request = HttpRequest.newBuilder()
@@ -118,10 +114,10 @@ public class RadioAdminFacade {
         }
     }
 
-    // Повертає мапу: Час -> Кількість
+
     public java.util.Map<String, Double> getChannelStats(int channelId) throws IOException, InterruptedException {
         String json = sendGet("/admin/stats?id=" + channelId);
-        // Використовуємо TypeToken для Map
+
         return gson.fromJson(json, new TypeToken<java.util.Map<String, Double>>(){}.getType());
     }
 
@@ -136,10 +132,10 @@ public class RadioAdminFacade {
     }
 
     public static class PlaylistInfoDto {
-        private int id; // Додали ID, він може знадобитись
+        private int id;
         private String name;
         private int tracksCount;
-        private List<TrackDto> tracks; // Змінено тип
+        private List<TrackDto> tracks;
 
         public String getName() { return name; }
         public int getId() { return id; }
@@ -157,7 +153,7 @@ public class RadioAdminFacade {
 
         @Override
         public String toString() {
-            return title + " — " + artist; // Це для зручного відображення в ChoiceDialog
+            return title + " — " + artist;
         }
     }
 

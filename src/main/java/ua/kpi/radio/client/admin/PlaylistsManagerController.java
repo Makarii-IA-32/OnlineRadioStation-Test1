@@ -197,8 +197,8 @@ public class PlaylistsManagerController {
                         facade.addTrackToPlaylist(selectedPlaylist.getId(), t.getId());
                     }
 
-                    // Оновлюємо UI
                     loadTracks(selectedPlaylist.getId());
+                    // Сповіщаємо про зміни
                     EventManager.getInstance().notifyObservers(selectedPlaylist.getId());
 
                 } catch (Exception e) { e.printStackTrace(); }
